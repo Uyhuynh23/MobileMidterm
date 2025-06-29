@@ -4,6 +4,9 @@ import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.GridLayoutManager
+import com.example.mobile_midterm.Adapter.ItemsAdapter
+import com.example.mobile_midterm.ViewModel.MainViewModel
 import com.example.mobile_midterm.databinding.ActivityMainBinding
 
 
@@ -12,8 +15,10 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private lateinit var loyaltyAdapter: LoyaltyAdapter
 
-    private val totalCups = 8
-    private val earnedCups = 4
+    private val viewModel= MainViewModel()
+
+    private val totalCups = 7
+    private val earnedCups = 3
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,6 +28,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         setupLoyaltyCard()
+        initItems()
     }
 
     private fun setupLoyaltyCard() {
@@ -41,4 +47,13 @@ class MainActivity : AppCompatActivity() {
         binding.cupRecycler.visibility = View.VISIBLE
     }
 
+    private fun initItems(){
+        viewModel.loadItems().observe(this) { items ->
+            binding.coffeeRecycler.layoutManager = GridLayoutManager(this, 2)
+            binding.coffeeRecycler.adapter = ItemsAdapter(items)
+        }
+    }
+
 }
+
+
