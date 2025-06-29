@@ -48,10 +48,13 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initItems(){
+
+        binding.progressBarItem.visibility = View.VISIBLE
         viewModel.loadItems().observe(this) { items ->
             binding.coffeeRecycler.layoutManager = GridLayoutManager(this, 2)
             binding.coffeeRecycler.adapter = ItemsAdapter(items)
         }
+        binding.progressBarItem.visibility = View.GONE
     }
 
 }

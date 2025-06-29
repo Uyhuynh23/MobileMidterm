@@ -10,4 +10,7 @@
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
     <string name="anderson">Anderson</string>
+    <string name="store">Store</string>
+    <string name="gift">Gift</string>
+    <string name="receipt">Receipt</string>
 </resources>
