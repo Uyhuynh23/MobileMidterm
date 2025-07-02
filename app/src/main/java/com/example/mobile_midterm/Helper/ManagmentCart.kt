@@ -68,7 +68,7 @@ class ManagmentCart(val context: Context) {
     }
 
     fun checkOut(arraylist: ArrayList<ItemsModel>) {
-        tinyDB.putListObject("HistoryList", arraylist)
+        tinyDB.putListObject("HistoryOrders", arraylist)
     }
 
     fun clearCart() {

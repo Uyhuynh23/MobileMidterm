@@ -13,5 +13,7 @@ data class ItemsModel(
     var select:String="",//hot, iced
     var ice:String="",//less,medium,full
     var numberInCart:Int = 0,
-    var extra:String=""
+    var extra:String="",
+    var orderTime:String="",
+    var address:String=""
 ) : Serializable

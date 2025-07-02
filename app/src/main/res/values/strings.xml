@@ -15,4 +15,6 @@
     <string name="receipt">Receipt</string>
     <string name="back_button">back_button</string>
     <string name="americano">Americano</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
