@@ -32,7 +32,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupLoyaltyCard() {
-        // Set text like "4 / 8"
 
         binding.progressBar.visibility = View.VISIBLE
         binding.cupRecycler.visibility = View.GONE

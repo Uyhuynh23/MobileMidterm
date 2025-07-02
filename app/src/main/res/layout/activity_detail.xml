@@ -47,7 +47,7 @@
                 <ImageView
                     android:id="@+id/cartIcon"
                     android:layout_width="48dp"
-                    android:layout_height="24dp"
+                    android:layout_height="36dp"
                     android:layout_marginTop="25dp"
                     android:layout_marginEnd="16dp"
                     android:src="@drawable/ic_cart"
@@ -72,7 +72,7 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <ImageView
-                android:id="@+id/imageView4"
+                android:id="@+id/picMain"
                 android:layout_width="0dp"
                 android:layout_height="146dp"
                 android:layout_marginTop="16dp"
@@ -92,7 +92,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageView4">
+                app:layout_constraintTop_toBottomOf="@+id/picMain">
 
                 <!-- Quantity + Coffee Name -->
 
@@ -120,7 +120,7 @@
                         android:background="@drawable/stroke_grey_bg">
 
                         <TextView
-                            android:id="@+id/minusBtn"
+                            android:id="@+id/minusCart"
                             android:layout_width="28dp"
                             android:layout_height="28dp"
                             android:gravity="center"
@@ -141,7 +141,7 @@
                             android:textSize="18sp"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toStartOf="@id/plusCart"
-                            app:layout_constraintStart_toEndOf="@id/minusBtn"
+                            app:layout_constraintStart_toEndOf="@id/minusCart"
                             app:layout_constraintTop_toTopOf="parent" />
 
                         <TextView
@@ -189,10 +189,13 @@
 
                         <!-- Single -->
                         <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/Single"
                             android:layout_width="80dp"
                             android:layout_height="match_parent"
                             android:layout_marginEnd="8dp"
-                            android:background="@drawable/stroke_grey_bg">
+                            android:background="@drawable/stroke_grey_bg"
+                            android:clickable="true"
+                            android:focusable="true">
 
                             <TextView
                                 android:id="@+id/singleShot"
@@ -210,9 +213,12 @@
 
                         <!-- Double -->
                         <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/Double"
                             android:layout_width="80dp"
                             android:layout_height="match_parent"
-                            android:background="@drawable/stroke_grey_bg">
+                            android:background="@drawable/stroke_grey_bg"
+                            android:clickable="true"
+                            android:focusable="true">
 
                             <TextView
                                 android:id="@+id/doubleShot"
@@ -254,16 +260,17 @@
                         android:textStyle="bold" />
 
                     <ImageView
-                        android:id="@+id/selectOption1"
+                        android:id="@+id/SelectHot"
                         android:layout_width="28dp"
                         android:layout_height="27dp"
                         android:layout_marginEnd="16dp"
                         android:src="@drawable/ic_cup" />
 
                     <ImageView
-                        android:id="@+id/selectOption2"
+                        android:id="@+id/SelectIced"
                         android:layout_width="20dp"
                         android:layout_height="34dp"
+                        android:alpha="1"
                         android:src="@drawable/ic_takeaway" />
                 </LinearLayout>
 
@@ -374,7 +381,7 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/totalAmount"
+                        android:id="@+id/priceTxt"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="$3.00"
@@ -383,16 +390,26 @@
                         android:textStyle="bold" />
                 </LinearLayout>
 
-                <Button
-                    android:id="@+id/addToCartButton"
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/AddButton"
                     android:layout_width="match_parent"
-                    android:layout_height="56dp"
-                    android:layout_margin="16dp"
-                    android:background="@drawable/nav_background"
-                    android:backgroundTint="@color/dark_blue"
-                    android:text="Add to cart"
-                    android:textColor="@android:color/white"
-                    app:layout_constraintBottom_toBottomOf="parent" />
+                    android:layout_height="48dp"
+                    android:background="@drawable/darkblue_button">
+
+                    <TextView
+                        android:id="@+id/textView2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Add to cart"
+                        android:textColor="@color/white"
+                        android:textColorLink="#FFFFFF"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
 
                 <!-- Total Amount -->
