@@ -67,18 +67,7 @@ class CartAdapter(
             })
         }
 
-        holder.binding.removeItemBtn.setOnClickListener {
-            managmentCart.removeItem(
-                listItemSelected,
-                position,
-                object : ChangeNumberItemsListener {
-                    override fun onChanged() {
-                        notifyDataSetChanged()
-                        changeNumberItemsListener?.onChanged()
-                    }
 
-                })
-        }
     }
 
     override fun getItemCount(): Int = listItemSelected.size

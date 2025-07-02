@@ -46,12 +46,11 @@ class ManagmentCart(val context: Context) {
         listener.onChanged()
     }
     fun removeItem(listItems: ArrayList<ItemsModel>, position: Int, listener: ChangeNumberItemsListener) {
-
         listItems.removeAt(position)
-
         tinyDB.putListObject("CartList", listItems)
         listener.onChanged()
     }
+
 
     fun plusItem(listItems: ArrayList<ItemsModel>, position: Int, listener: ChangeNumberItemsListener) {
         listItems[position].numberInCart++
@@ -70,8 +69,6 @@ class ManagmentCart(val context: Context) {
 
     fun checkOut(arraylist: ArrayList<ItemsModel>) {
         tinyDB.putListObject("HistoryList", arraylist)
-        Toast.makeText(context, "Successfully Purchased", Toast.LENGTH_SHORT).show()
-
     }
 
     fun clearCart() {
