@@ -150,9 +150,19 @@ class DetailActivity : AppCompatActivity() {
     private fun bundle(){
         binding.apply{
 
-            Glide.with(this@DetailActivity)
-                .load(item.picUrl[0])
-                .into(binding.picMain)
+            if (item.isDrawable) {
+                val resId = resources.getIdentifier(item.picUrl[0], "drawable", packageName)
+                Glide.with(this@DetailActivity)
+                    .load(resId)
+                    .into(binding.picMain)
+            } else {
+                Glide.with(this@DetailActivity)
+                    .load(item.picUrl[0])
+                    .into(binding.picMain)
+            }
+
+
+
 
             coffeeName.text = item.title
             priceTxt.text = "$" + item.price

@@ -26,9 +26,19 @@ class ItemsAdapter(val item:MutableList<ItemsModel>):
     override fun onBindViewHolder(holder: ItemsAdapter.Viewholder, position: Int) {
        holder.binding.itemName.text=item[position].title
 
-        Glide.with(context)
-             .load(item[position].picUrl[0])
-             .into(holder.binding.itemImage)
+        val imagePath = item[position].picUrl[0]
+        if (item[position].isDrawable) {
+            // Load from drawable resource
+            val resourceId = context.resources.getIdentifier(imagePath, "drawable", context.packageName)
+            Glide.with(context)
+                .load(resourceId)
+                .into(holder.binding.itemImage)
+        } else {
+            // Load from URL
+            Glide.with(context)
+                .load(imagePath)
+                .into(holder.binding.itemImage)
+        }
 
         holder.itemView.setOnClickListener{
             val intent= Intent(context, DetailActivity::class.java)

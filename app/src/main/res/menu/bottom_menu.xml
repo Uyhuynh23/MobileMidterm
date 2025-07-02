@@ -4,15 +4,15 @@
 
     <item
         android:id="@+id/store"
-        android:icon="@drawable/ic_store"
+        android:icon="@drawable/ic_bin_red"
         android:title="@string/store"/>
-    <item
-        android:id="@+id/gift"
-        android:icon="@drawable/ic_gift"
-        android:title="@string/gift"/>
-    <item
-        android:id="@+id/receipt"
-        android:icon="@drawable/ic_receipt"
-        android:title="@string/receipt"/>
+<!--    <item-->
+<!--        android:id="@+id/gift"-->
+<!--        android:icon="@drawable/ic_gift"-->
+<!--        android:title="@string/gift"/>-->
+<!--    <item-->
+<!--        android:id="@+id/receipt"-->
+<!--        android:icon="@drawable/ic_receipt"-->
+<!--        android:title="@string/receipt"/>-->
 
 </menu>

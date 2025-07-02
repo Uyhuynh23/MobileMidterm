@@ -6,6 +6,7 @@ data class ItemsModel(
     var title:String="",
     var description:String="",
     var picUrl:ArrayList<String> = ArrayList(),
+    var isDrawable: Boolean = true, // flag to indicate if image is from drawable
     var price:Double=0.0,
     var rating:Double=0.0,
     var shot:String="",//single,double
