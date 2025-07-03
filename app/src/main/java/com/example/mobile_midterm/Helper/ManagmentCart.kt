@@ -67,9 +67,31 @@ class ManagmentCart(val context: Context) {
         return fee
     }
 
-    fun checkOut(arraylist: ArrayList<ItemsModel>) {
-        tinyDB.putListObject("HistoryOrders", arraylist)
+    fun checkOut(cartList: ArrayList<ItemsModel>) {
+        val tinyDB = TinyDB(context)
+
+        // Move current ongoing orders to history (if not empty)
+        val ongoingOrders = tinyDB.getListObject("OnGoingOrders")
+        if (ongoingOrders.isNotEmpty()) {
+            val historyOrders = tinyDB.getListObject("HistoryOrders")
+            historyOrders.addAll(ongoingOrders)
+            tinyDB.putListObject("HistoryOrders", historyOrders)
+        }
+
+        // Add current time to each new order
+        val currentTime = java.text.SimpleDateFormat("dd MMM yyyy | hh:mm a", java.util.Locale.getDefault()).format(java.util.Date())
+        for (item in cartList) {
+            item.orderTime = currentTime
+            item.address = "227 Nguyen Van Cu, District 5, HCMC"
+        }
+
+        // Save to OnGoingOrders
+        tinyDB.putListObject("OnGoingOrders", cartList)
+
+        // Clear cart
+        clearCart()
     }
+
 
     fun clearCart() {
         tinyDB.putListObject("CartList", arrayListOf<ItemsModel>())}

@@ -7,6 +7,8 @@ import android.text.TextUtils;
 
 import com.google.gson.Gson;
 import com.example.mobile_midterm.Domain.ItemsModel;
+import com.example.mobile_midterm.Domain.UsersModel;
+
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -84,6 +86,26 @@ public class TinyDB {
             objStrings.add(gson.toJson(player));
         }
         putListString(key, objStrings);
+    }
+
+    /**
+     * Save a custom object (e.g., UsersModel)
+     */
+    public void putObject(String key, Object obj) {
+        checkForNullKey(key);
+        Gson gson = new Gson();
+        String jsonString = gson.toJson(obj);
+        preferences.edit().putString(key, jsonString).apply();
+    }
+
+    /**
+     * Retrieve a custom object (e.g., UsersModel)
+     */
+    public <T> T getObject(String key, Class<T> clazz) {
+        String jsonString = preferences.getString(key, null);
+        if (jsonString == null) return null;
+        Gson gson = new Gson();
+        return gson.fromJson(jsonString, clazz);
     }
 
     /**

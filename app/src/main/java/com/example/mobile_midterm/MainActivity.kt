@@ -33,6 +33,12 @@ class MainActivity : AppCompatActivity() {
             intent = Intent(this, CartActivity::class.java)
             startActivity(intent)
         }
+
+        binding.profileIcon.setOnClickListener(){
+            intent = Intent(this, ProfileActivity::class.java)
+            startActivity(intent)
+        }
+
         BottomNavHelper.setupNavigation(
             this,
             binding.Shop,

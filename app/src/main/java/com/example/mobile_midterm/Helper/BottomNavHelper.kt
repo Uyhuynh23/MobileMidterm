@@ -3,10 +3,10 @@ package com.example.mobile_midterm.Helper
 import android.app.Activity
 import android.content.Intent
 import android.widget.ImageView
-import com.example.mobile_midterm.GiftActivity
 import com.example.mobile_midterm.MainActivity
 import com.example.mobile_midterm.MyOrderActivity
 import com.example.mobile_midterm.R
+import com.example.mobile_midterm.RewardsActivity
 
 object BottomNavHelper {
 
@@ -46,7 +46,7 @@ object BottomNavHelper {
 
         giftIcon.setOnClickListener {
             if (currentScreen != "gift") {
-                activity.startActivity(Intent(activity, GiftActivity::class.java))
+                activity.startActivity(Intent(activity, RewardsActivity::class.java))
                 activity.overridePendingTransition(0, 0)
             }
         }

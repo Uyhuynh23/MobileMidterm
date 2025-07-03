@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <EditText
+        android:id="@+id/editField"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter new value"
+        android:inputType="textPersonName"
+        android:textColor="#000000"
+        android:textColorHint="#AAAAAA"
+        android:textSize="16sp"
+        android:background="@drawable/edit_text_background"
+        android:padding="10dp" />
+</LinearLayout>
