@@ -13,31 +13,31 @@
         android:theme="@style/Theme.Mobile_midterm"
         tools:targetApi="31">
         <activity
-            android:name=".RedeemActivity"
+            android:name=".Activity.RedeemActivity"
             android:exported="false" />
         <activity
-            android:name=".RewardsActivity"
+            android:name=".Activity.RewardsActivity"
             android:exported="false" />
         <activity
-            android:name=".ProfileActivity"
+            android:name=".Activity.ProfileActivity"
             android:exported="false" />
         <activity
             android:name=".GiftActivity"
             android:exported="false" />
         <activity
-            android:name=".TrackActivity"
+            android:name=".Activity.TrackActivity"
             android:exported="false" />
         <activity
-            android:name=".MyOrderActivity"
+            android:name=".Activity.MyOrderActivity"
             android:exported="false" />
         <activity
-            android:name=".CartActivity"
+            android:name=".Activity.CartActivity"
             android:exported="false" />
         <activity
-            android:name=".DetailActivity"
+            android:name=".Activity.DetailActivity"
             android:exported="false" />
         <activity
-            android:name=".SplashActivity"
+            android:name=".Activity.SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -46,7 +46,7 @@
             </intent-filter>
         </activity> <!-- Other screens -->
         <activity
-            android:name=".MainActivity"
+            android:name=".Activity.MainActivity"
             android:exported="false" />
         <activity
             android:name=".ui.login.LoginActivity"

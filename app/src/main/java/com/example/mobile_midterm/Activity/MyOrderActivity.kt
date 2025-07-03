@@ -1,10 +1,7 @@
-package com.example.mobile_midterm
+package com.example.mobile_midterm.Activity
 
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.example.mobile_midterm.Adapter.MyOrderPagerAdapter
 import com.example.mobile_midterm.Helper.BottomNavHelper
 import com.example.mobile_midterm.databinding.ActivityMyOrderBinding

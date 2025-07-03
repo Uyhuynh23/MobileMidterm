@@ -1,4 +1,4 @@
-package com.example.mobile_midterm
+package com.example.mobile_midterm.Activity
 
 import android.content.Intent
 import android.os.Bundle
@@ -8,11 +8,10 @@ import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.bumptech.glide.Glide
 import com.example.mobile_midterm.Domain.ItemsModel
 import com.example.mobile_midterm.Helper.ManagmentCart
+import com.example.mobile_midterm.R
 import com.example.mobile_midterm.databinding.ActivityDetailBinding
 
 class DetailActivity : AppCompatActivity() {
@@ -171,10 +170,10 @@ class DetailActivity : AppCompatActivity() {
                 managementCart.insertItems(item)
             }
         cartIcon.setOnClickListener{
-            startActivity(Intent(this@DetailActivity,CartActivity::class.java))
+            startActivity(Intent(this@DetailActivity, CartActivity::class.java))
         }
         backButton.setOnClickListener{
-            startActivity(Intent(this@DetailActivity,MainActivity::class.java))
+            startActivity(Intent(this@DetailActivity, MainActivity::class.java))
         }
         plusCart.setOnClickListener{
             numberItemTxt.text = (item.numberInCart+1).toString()

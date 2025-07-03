@@ -1,11 +1,9 @@
-package com.example.mobile_midterm
+package com.example.mobile_midterm.Activity
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.mobile_midterm.Adapter.RedeemAdapter
-import com.example.mobile_midterm.Domain.ItemsModel
-import com.example.mobile_midterm.Helper.TinyDB
 import com.example.mobile_midterm.Repository.MainRepository
 import com.example.mobile_midterm.databinding.ActivityRedeemBinding
 

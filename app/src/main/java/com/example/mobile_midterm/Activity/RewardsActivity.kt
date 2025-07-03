@@ -1,4 +1,4 @@
-package com.example.mobile_midterm
+package com.example.mobile_midterm.Activity
 
 import android.content.Intent
 import android.os.Bundle

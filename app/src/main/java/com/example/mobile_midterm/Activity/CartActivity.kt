@@ -1,4 +1,4 @@
-package com.example.mobile_midterm
+package com.example.mobile_midterm.Activity
 
 import android.content.Intent
 import android.graphics.Canvas
@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.mobile_midterm.Adapter.CartAdapter
 import com.example.mobile_midterm.Helper.ChangeNumberItemsListener
 import com.example.mobile_midterm.Helper.ManagmentCart
+import com.example.mobile_midterm.R
 import com.example.mobile_midterm.databinding.ActivityCartBinding
 
 class CartActivity : AppCompatActivity() {

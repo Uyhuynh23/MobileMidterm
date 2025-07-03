@@ -50,6 +50,8 @@ class RedeemAdapter(private val redeemItems: List<ItemsModel>) :
                 user.points += item.points
                 tinyDB.putObject("User", user)
 
+                item.orderTime = java.text.SimpleDateFormat("dd MMM yyyy | hh:mm a", java.util.Locale.getDefault()).format(java.util.Date())
+
                 // Save to history rewards
                 val rewardHistory = tinyDB.getListObject("HistoryRewards")
                 rewardHistory.add(item)

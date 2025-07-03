@@ -9,7 +9,7 @@ import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
 import com.bumptech.glide.Glide
-import com.example.mobile_midterm.DetailActivity
+import com.example.mobile_midterm.Activity.DetailActivity
 
 class ItemsAdapter(val item:MutableList<ItemsModel>):
     RecyclerView.Adapter<ItemsAdapter.Viewholder>() {

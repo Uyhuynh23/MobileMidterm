@@ -9,7 +9,7 @@
     android:gravity="center"
     android:padding="24dp"
     android:background="@android:color/white"
-    tools:context=".TrackActivity">
+    tools:context=".Activity.TrackActivity">
 
     <!-- Success Icon -->
     <ImageView

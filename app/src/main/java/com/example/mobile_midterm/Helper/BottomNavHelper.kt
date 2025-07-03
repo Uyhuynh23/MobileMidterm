@@ -3,10 +3,9 @@ package com.example.mobile_midterm.Helper
 import android.app.Activity
 import android.content.Intent
 import android.widget.ImageView
-import com.example.mobile_midterm.MainActivity
-import com.example.mobile_midterm.MyOrderActivity
-import com.example.mobile_midterm.R
-import com.example.mobile_midterm.RewardsActivity
+import com.example.mobile_midterm.Activity.MainActivity
+import com.example.mobile_midterm.Activity.MyOrderActivity
+import com.example.mobile_midterm.Activity.RewardsActivity
 
 object BottomNavHelper {
 

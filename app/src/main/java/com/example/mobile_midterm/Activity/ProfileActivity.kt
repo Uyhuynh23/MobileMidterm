@@ -1,14 +1,14 @@
-package com.example.mobile_midterm
+package com.example.mobile_midterm.Activity
 
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.widget.EditText
-import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.example.mobile_midterm.Domain.UsersModel
 import com.example.mobile_midterm.Helper.TinyDB
+import com.example.mobile_midterm.R
 import com.example.mobile_midterm.databinding.ActivityProfileBinding
 
 class ProfileActivity : AppCompatActivity() {
