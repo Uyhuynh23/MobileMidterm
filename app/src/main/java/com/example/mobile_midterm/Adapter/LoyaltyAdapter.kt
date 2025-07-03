@@ -1,10 +1,11 @@
-package com.example.mobile_midterm
+package com.example.mobile_midterm.Adapter
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.mobile_midterm.R
 
 class LoyaltyAdapter(
     private val totalCups: Int,

@@ -4,6 +4,7 @@ import android.content.Context
 import android.widget.Toast
 
 import com.example.mobile_midterm.Domain.ItemsModel
+import com.example.mobile_midterm.Domain.UsersModel
 
 
 class ManagmentCart(val context: Context) {
@@ -78,7 +79,7 @@ class ManagmentCart(val context: Context) {
             tinyDB.putListObject("HistoryOrders", historyOrders)
         }
 
-        // Add current time to each new order
+        // Add current time & default address to each new order
         val currentTime = java.text.SimpleDateFormat("dd MMM yyyy | hh:mm a", java.util.Locale.getDefault()).format(java.util.Date())
         for (item in cartList) {
             item.orderTime = currentTime
@@ -88,10 +89,21 @@ class ManagmentCart(val context: Context) {
         // Save to OnGoingOrders
         tinyDB.putListObject("OnGoingOrders", cartList)
 
+        // Update User: add points always, add loyalty only if history added
+        val user = tinyDB.getObject("User", UsersModel::class.java) ?: UsersModel()
+        val totalPoints = cartList.sumOf { it.points * it.numberInCart }
+
+        user.points += totalPoints
+        if (ongoingOrders.isNotEmpty()) {
+            val totalCups = ongoingOrders.sumOf { it.numberInCart }
+            user.loyaltyCups += totalCups
+        }
+
+        tinyDB.putObject("User", user)
+
         // Clear cart
         clearCart()
     }
-
 
     fun clearCart() {
         tinyDB.putListObject("CartList", arrayListOf<ItemsModel>())}

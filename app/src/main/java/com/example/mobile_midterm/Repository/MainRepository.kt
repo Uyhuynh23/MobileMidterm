@@ -22,7 +22,9 @@ class MainRepository {
                 description = "Rich espresso with steamed milk",
                 picUrl = arrayListOf("@drawable/cappuccino"),
                 price = 3.00,
-                rating = 4.5
+                rating = 4.5,
+                points = 12,
+                pointsRedeem = 1340
             )
         )
 
@@ -32,7 +34,9 @@ class MainRepository {
                 description = "Espresso with hot water",
                 picUrl = arrayListOf("@drawable/americano"),
                 price = 2.50,
-                rating = 4.2
+                rating = 4.2,
+                points = 12,
+                pointsRedeem = 1340
             )
         )
 
@@ -42,7 +46,9 @@ class MainRepository {
                 description = "Espresso with chocolate and milk",
                 picUrl = arrayListOf("@drawable/mocha"),
                 price = 3.80,
-                rating = 4.6
+                rating = 4.6,
+                points = 12,
+                pointsRedeem = 1340
             )
         )
 
@@ -52,7 +58,9 @@ class MainRepository {
                 description = "Espresso with steamed milk",
                 picUrl = arrayListOf("@drawable/flatwhite"),
                 price = 3.50,
-                rating = 4.3
+                rating = 4.3,
+                points = 12,
+                pointsRedeem = 1340
             )
         )
 

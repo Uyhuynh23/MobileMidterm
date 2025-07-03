@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <item name="backButton" type="id" />
+    <item name="titleText" type="id" />
+    <item name="loyaltyCard" type="id" />
 </resources>

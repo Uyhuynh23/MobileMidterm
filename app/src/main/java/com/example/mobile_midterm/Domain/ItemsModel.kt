@@ -16,5 +16,7 @@ data class ItemsModel(
     var numberInCart:Int = 0,
     var extra:String="",
     var orderTime:String="",
-    var address:String=""
+    var address:String="",
+    var points:Int=0,
+    var pointsRedeem:Int=0
 ) : Serializable

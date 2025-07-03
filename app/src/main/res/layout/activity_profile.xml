@@ -42,7 +42,7 @@
                 android:layout_height="wrap_content"
                 android:text="Profile"
                 android:textColor="#1C2A3A"
-                android:textSize="18sp"
+                android:textSize="24sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
