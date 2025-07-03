@@ -1,11 +1,13 @@
 package com.example.mobile_midterm
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.mobile_midterm.Adapter.ItemsAdapter
+import com.example.mobile_midterm.Helper.BottomNavHelper
 import com.example.mobile_midterm.ViewModel.MainViewModel
 import com.example.mobile_midterm.databinding.ActivityMainBinding
 
@@ -26,6 +28,18 @@ class MainActivity : AppCompatActivity() {
         // Setup ViewBinding
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        binding.cartIcon.setOnClickListener(){
+            intent = Intent(this, CartActivity::class.java)
+            startActivity(intent)
+        }
+        BottomNavHelper.setupNavigation(
+            this,
+            binding.Shop,
+            binding.Gift,
+            binding.Receipt,
+            "shop"
+        )
 
         setupLoyaltyCard()
         initItems()

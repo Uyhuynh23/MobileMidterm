@@ -42,10 +42,21 @@ class CartAdapter(
         holder.binding.TotalItemPrice.text = "$${Math.round(item.numberInCart * item.price)}"
         holder.binding.itemQuantity.text = "x" + item.numberInCart.toString()
 
-        Glide.with(holder.itemView.context)
-            .load(item.picUrl[0])
-            .apply(RequestOptions().transform(CenterCrop()))
-            .into(holder.binding.picCart)
+        val context = holder.itemView.context
+
+        if (item.isDrawable) {
+            val resId = context.resources.getIdentifier(item.picUrl[0], "drawable", context.packageName)
+            Glide.with(context)
+                .load(resId)
+                .apply(RequestOptions().transform(CenterCrop()))
+                .into(holder.binding.picCart)
+        } else {
+            Glide.with(context)
+                .load(item.picUrl[0])
+                .apply(RequestOptions().transform(CenterCrop()))
+                .into(holder.binding.picCart)
+        }
+
 
         holder.binding.plusEachItem.setOnClickListener {
             managmentCart.plusItem(listItemSelected, position, object : ChangeNumberItemsListener {

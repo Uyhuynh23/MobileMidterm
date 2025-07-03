@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.mobile_midterm.Adapter.MyOrderPagerAdapter
+import com.example.mobile_midterm.Helper.BottomNavHelper
 import com.example.mobile_midterm.databinding.ActivityMyOrderBinding
 import com.google.android.material.tabs.TabLayoutMediator
 
@@ -23,5 +24,12 @@ class MyOrderActivity : AppCompatActivity() {
         TabLayoutMediator(binding.tabLayout, binding.viewPager) { tab, position ->
             tab.text = if (position == 0) "On going" else "History"
         }.attach()
+        BottomNavHelper.setupNavigation(
+            this,
+            binding.Shop,
+            binding.Gift,
+            binding.Receipt,
+            "receipt"
+        )
     }
 }

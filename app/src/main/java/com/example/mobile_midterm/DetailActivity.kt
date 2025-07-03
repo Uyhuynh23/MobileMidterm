@@ -161,9 +161,6 @@ class DetailActivity : AppCompatActivity() {
                     .into(binding.picMain)
             }
 
-
-
-
             coffeeName.text = item.title
             priceTxt.text = "$" + item.price
 
