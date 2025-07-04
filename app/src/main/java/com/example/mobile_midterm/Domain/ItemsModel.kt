@@ -14,9 +14,10 @@ data class ItemsModel(
     var select:String="",//hot, iced
     var ice:String="",//less,medium,full
     var numberInCart:Int = 0,
-    var extra:String="",
+    var category:String="",
     var orderTime:String="",
     var address:String="",
     var points:Int=0,
-    var pointsRedeem:Int=0
+    var pointsRedeem:Int=0,
+    var isFavorite: Boolean = false
 ) : Serializable

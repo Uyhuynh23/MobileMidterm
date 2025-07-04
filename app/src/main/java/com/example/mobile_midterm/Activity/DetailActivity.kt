@@ -161,7 +161,7 @@ class DetailActivity : AppCompatActivity() {
             }
 
             coffeeName.text = item.title
-            priceTxt.text = "$" + item.price
+            TotalAmount.text = "$" + item.price.toString()
 
             AddButton.setOnClickListener{
                 item.numberInCart=Integer.valueOf(
@@ -178,11 +178,13 @@ class DetailActivity : AppCompatActivity() {
         plusCart.setOnClickListener{
             numberItemTxt.text = (item.numberInCart+1).toString()
             item.numberInCart++
+            binding.TotalAmount.text = "$" + (item.price*item.numberInCart).toString()
         }
         minusCart.setOnClickListener{
             if(item.numberInCart>0){
                 numberItemTxt.text = (item.numberInCart-1).toString()
                 item.numberInCart--
+                binding.TotalAmount.text = "$" + (item.price*item.numberInCart).toString()
             }
         }
 

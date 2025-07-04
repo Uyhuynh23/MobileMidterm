@@ -163,6 +163,13 @@
         app:layout_constraintTop_toBottomOf="@+id/LoyaltyCard"
         app:layout_constraintVertical_bias="0.0">
 
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
+
         <ProgressBar
             android:id="@+id/progressBarItem"
             style="?android:attr/progressBarStyle"
@@ -190,7 +197,9 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/coffeeRecycler"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="400dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="16dp"
             android:clipToPadding="false"
             android:minHeight="120dp"
             android:overScrollMode="ifContentScrolls"
@@ -200,7 +209,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView" />
+            app:layout_constraintTop_toBottomOf="@+id/recyclerView" />
 
         <androidx.coordinatorlayout.widget.CoordinatorLayout
             android:id="@+id/coordinatorLayout"
