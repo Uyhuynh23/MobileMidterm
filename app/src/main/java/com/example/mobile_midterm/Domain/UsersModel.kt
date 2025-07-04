@@ -8,5 +8,6 @@ data class UsersModel(
     var email: String = "Anderson@email.com",
     var address: String = "3 Addersion Court\nChino Hills, HO56824, United State",
     var loyaltyCups: Int = 8,
-    var points: Int = 1350
+    var points: Int = 1350,
+    var lastSpinDate: String = ""
 ) : Serializable

@@ -1,5 +1,6 @@
 package com.example.mobile_midterm.Activity
 
+import android.animation.ObjectAnimator
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
@@ -12,6 +13,9 @@ import com.example.mobile_midterm.Domain.UsersModel
 import com.example.mobile_midterm.Helper.BottomNavHelper
 import com.example.mobile_midterm.Helper.TinyDB
 import com.example.mobile_midterm.databinding.ActivityRewardsBinding
+import java.text.SimpleDateFormat
+import java.util.Date
+import java.util.Locale
 
 class RewardsActivity : AppCompatActivity() {
 
@@ -31,6 +35,11 @@ class RewardsActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        binding.DailyReward.setOnClickListener{
+            intent= Intent(this, DailySpinActivity::class.java)
+            startActivity(intent)
+        }
+
         BottomNavHelper.setupNavigation(
             this,
             binding.Shop,
@@ -39,9 +48,15 @@ class RewardsActivity : AppCompatActivity() {
             "gift"
         )
 
+        binding.DailyReward.setOnClickListener(){
+            intent= Intent(this, DailySpinActivity::class.java)
+            startActivity(intent)
+        }
+
         setupLoyaltyCard()
         setupPointDisplay()
         setupRewardHistory()
+        setButtonDailyReward()
     }
 
     override fun onResume() {
@@ -49,6 +64,7 @@ class RewardsActivity : AppCompatActivity() {
         setupPointDisplay()
         setupRewardHistory()
         setupLoyaltyCard()
+        setButtonDailyReward()
     }
 
     private fun setupLoyaltyCard() {
@@ -80,4 +96,27 @@ class RewardsActivity : AppCompatActivity() {
         rewardAdapter = RewardAdapter(historyOrders as ArrayList<ItemsModel>)
         binding.historyRewardsRecycler.adapter = rewardAdapter
     }
+
+    private fun startShaking(view: View) {
+        val animator = ObjectAnimator.ofFloat(view, "translationX", 0f, 10f, -10f, 10f, -10f, 0f)
+        animator.duration = 600
+        animator.repeatCount = ObjectAnimator.INFINITE
+        animator.start()
+    }
+
+    private fun setButtonDailyReward() {
+        // Check if daily reward is available
+        val tinyDB = TinyDB(this)
+        val user = tinyDB.getObject("User", UsersModel::class.java) ?: UsersModel()
+        val today = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(Date())
+
+        if (user.lastSpinDate != today) {
+            // Start shaking animation
+            startShaking(binding.DailyReward)
+        } else {
+            // Stop animation if already spun
+            binding.DailyReward.clearAnimation()
+        }
+    }
+
 }
