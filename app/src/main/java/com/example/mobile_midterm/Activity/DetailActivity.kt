@@ -45,7 +45,7 @@ class DetailActivity : AppCompatActivity() {
 
         coffeeName.text = item.title
         TotalAmount.text = "$${item.price}"
-        numberItemTxt.text = item.numberInCart.toString()
+        numberItemTxt.text = "1"
     }
 
     private fun setupButtonClicks() = with(binding) {
@@ -69,7 +69,7 @@ class DetailActivity : AppCompatActivity() {
         }
 
         minusCart.setOnClickListener {
-            if (item.numberInCart > 0) {
+            if (item.numberInCart > 1) {
                 item.numberInCart--
                 numberItemTxt.text = item.numberInCart.toString()
                 updateTotal()

@@ -9,5 +9,8 @@ data class UsersModel(
     var address: String = "3 Addersion Court\nChino Hills, HO56824, United State",
     var loyaltyCups: Int = 8,
     var points: Int = 1350,
-    var lastSpinDate: String = ""
+    var lastSpinDate: String = "",
+    var password: String = "123456"
+
+
 ) : Serializable
