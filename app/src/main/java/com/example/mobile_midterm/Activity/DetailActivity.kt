@@ -78,8 +78,10 @@ class DetailActivity : AppCompatActivity() {
     }
 
     private fun updateTotal() = with(binding) {
-        TotalAmount.text = "$${item.price * item.numberInCart}"
+        val total = item.price * item.numberInCart
+        TotalAmount.text = "$${"%.2f".format(total)}"
     }
+
 
     private fun setupSizeSelection() = with(binding) {
         // Default selections

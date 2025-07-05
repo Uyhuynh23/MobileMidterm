@@ -7,7 +7,7 @@ data class UsersModel(
     var phoneNumber: String = "+60134589525",
     var email: String = "Anderson@email.com",
     var address: String = "3 Addersion Court\nChino Hills, HO56824, United State",
-    var loyaltyCups: Int = 8,
+    var loyaltyCups: Int = 6,
     var points: Int = 1350,
     var lastSpinDate: String = "",
     var password: String = "123456"

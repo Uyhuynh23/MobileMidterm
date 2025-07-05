@@ -65,8 +65,9 @@ class ManagmentCart(val context: Context) {
         for (item in listItem) {
             fee += item.price * item.numberInCart
         }
-        return fee
+        return String.format("%.2f", fee).toDouble()
     }
+
 
     fun checkOut(cartList: ArrayList<ItemsModel>) {
         val tinyDB = TinyDB(context)

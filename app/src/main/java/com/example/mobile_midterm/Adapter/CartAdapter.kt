@@ -39,7 +39,9 @@ class CartAdapter(
         holder.binding.optionSelect.text = item.select
 
 
-        holder.binding.TotalItemPrice.text = "$${Math.round(item.numberInCart * item.price)}"
+        val total = item.numberInCart * item.price
+        holder.binding.TotalItemPrice.text = "$${"%.2f".format(total)}"
+
         holder.binding.itemQuantity.text = "x" + item.numberInCart.toString()
 
         val context = holder.itemView.context

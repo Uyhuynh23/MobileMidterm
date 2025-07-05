@@ -4,6 +4,8 @@ import android.animation.ObjectAnimator
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.view.animation.AnimationUtils
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.mobile_midterm.Adapter.LoyaltyAdapter
@@ -12,6 +14,7 @@ import com.example.mobile_midterm.Domain.ItemsModel
 import com.example.mobile_midterm.Domain.UsersModel
 import com.example.mobile_midterm.Helper.BottomNavHelper
 import com.example.mobile_midterm.Helper.TinyDB
+import com.example.mobile_midterm.R
 import com.example.mobile_midterm.databinding.ActivityRewardsBinding
 import java.text.SimpleDateFormat
 import java.util.Date
@@ -83,7 +86,33 @@ class RewardsActivity : AppCompatActivity() {
 
         binding.progressBar.visibility = View.GONE
         binding.cupRecycler.visibility = View.VISIBLE
+
+        if (earnedCups == totalCups) {
+            val shake = AnimationUtils.loadAnimation(this, R.anim.shake)
+            binding.LoyaltyCard.startAnimation(shake)
+
+            binding.LoyaltyCard.setOnClickListener {
+                binding.LoyaltyCard.clearAnimation()
+
+                user.points += 1400
+                user.loyaltyCups = 0
+                TinyDB(this).putObject("User", user)
+
+                setupLoyaltyCard() // refresh display
+                setupPointDisplay() // refresh points
+
+                AlertDialog.Builder(this)
+                    .setTitle("Congratulations!")
+                    .setMessage("You've earned 1400 points 🎉")
+                    .setPositiveButton("OK", null)
+                    .show()
+            }
+        } else {
+            binding.LoyaltyCard.clearAnimation()
+            binding.LoyaltyCard.setOnClickListener(null)
+        }
     }
+
 
     private fun setupPointDisplay() {
         val user = TinyDB(this).getObject("User", UsersModel::class.java) ?: UsersModel()

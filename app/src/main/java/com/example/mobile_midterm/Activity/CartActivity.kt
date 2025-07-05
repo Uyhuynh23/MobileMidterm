@@ -122,7 +122,7 @@ class CartActivity : AppCompatActivity() {
     }
 
     private fun updateCartSummary() {
-        val total = managmentCart.getTotalFee().toInt()
+        val total = managmentCart.getTotalFee()
         binding.totalPriceText.text = "$$total"
     }
 
