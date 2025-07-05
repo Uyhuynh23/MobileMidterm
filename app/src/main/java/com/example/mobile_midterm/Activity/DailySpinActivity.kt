@@ -85,7 +85,6 @@ class DailySpinActivity : AppCompatActivity() {
                 val reward = rewards[selectedIndex]
                 handleReward(reward)
                 isSpinning = false
-                binding.SpinBtn.isEnabled = false // Disable after spinning
             }
         }
     }
@@ -100,9 +99,6 @@ class DailySpinActivity : AppCompatActivity() {
 
         user.lastSpinDate = getCurrentDate()
         tinyDB.putObject("User", user)
-
-        // Disable spin after reward
-        binding.SpinBtn.isEnabled = false
     }
 
 

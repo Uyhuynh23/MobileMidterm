@@ -8,6 +8,7 @@ import com.example.mobile_midterm.databinding.ActivityMyOrderBinding
 import com.google.android.material.tabs.TabLayoutMediator
 
 class MyOrderActivity : AppCompatActivity() {
+
     private lateinit var binding: ActivityMyOrderBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -15,12 +16,23 @@ class MyOrderActivity : AppCompatActivity() {
         binding = ActivityMyOrderBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val adapter = MyOrderPagerAdapter(this)
-        binding.viewPager.adapter = adapter
+        setupViewPager()
+        setupBottomNav()
+    }
+
+    private fun setupViewPager() {
+        binding.viewPager.adapter = MyOrderPagerAdapter(this)
 
         TabLayoutMediator(binding.tabLayout, binding.viewPager) { tab, position ->
-            tab.text = if (position == 0) "On going" else "History"
+            tab.text = when (position) {
+                0 -> "On going"
+                1 -> "History"
+                else -> ""
+            }
         }.attach()
+    }
+
+    private fun setupBottomNav() {
         BottomNavHelper.setupNavigation(
             this,
             binding.Shop,

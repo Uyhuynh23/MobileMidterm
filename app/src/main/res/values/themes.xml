@@ -5,5 +5,17 @@
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
 
+    <style name="Theme.Mobile_midterm.Splash" parent="Theme.SplashScreen">
+        <!-- Just a plain background color -->
+        <item name="windowSplashScreenBackground">@drawable/splash_logo</item>
+
+        <!-- Optional: animation fade -->
+        <item name="windowSplashScreenAnimationDuration">0</item>
+
+        <!-- After splash, use your normal app theme -->
+        <item name="postSplashScreenTheme">@style/Theme.Mobile_midterm</item>
+    </style>
+
+
     <style name="Theme.Mobile_midterm" parent="Base.Theme.Mobile_midterm" />
 </resources>

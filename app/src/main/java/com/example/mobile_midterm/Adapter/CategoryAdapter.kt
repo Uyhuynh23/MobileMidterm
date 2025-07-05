@@ -36,7 +36,7 @@ class CategoryAdapter(
         holder.binding.titleCat.setTypeface(null, if (category.isSelected) Typeface.BOLD else Typeface.NORMAL)
 
         holder.binding.titleCat.setBackgroundResource(
-            if (category.isSelected) R.drawable.darkblue_button else R.drawable.white_bg
+            if (category.isSelected) R.drawable.selected_white_bg else R.drawable.white_bg
         )
 
         holder.binding.titleCat.setTextColor(

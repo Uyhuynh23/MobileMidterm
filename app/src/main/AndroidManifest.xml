@@ -25,9 +25,6 @@
             android:name=".Activity.ProfileActivity"
             android:exported="false" />
         <activity
-            android:name=".GiftActivity"
-            android:exported="false" />
-        <activity
             android:name=".Activity.TrackActivity"
             android:exported="false" />
         <activity
@@ -41,16 +38,16 @@
             android:exported="false" />
         <activity
             android:name=".Activity.SplashActivity"
-            android:exported="true">
+            android:exported="true"
+            android:theme="@style/Theme.Mobile_midterm.Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity> <!-- Other screens -->
-        <activity
-            android:name=".Activity.MainActivity"
-            android:exported="false" />
+        </activity>
+        <activity android:name=".Activity.MainActivity"
+            android:exported="false"/>
+        <!-- Other screens -->
         <activity
             android:name=".ui.login.LoginActivity"
             android:exported="false"

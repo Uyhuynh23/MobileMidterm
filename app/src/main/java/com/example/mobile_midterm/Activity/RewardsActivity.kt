@@ -96,26 +96,29 @@ class RewardsActivity : AppCompatActivity() {
         rewardAdapter = RewardAdapter(historyOrders as ArrayList<ItemsModel>)
         binding.historyRewardsRecycler.adapter = rewardAdapter
     }
+    private var shakeAnimator: ObjectAnimator? = null
 
     private fun startShaking(view: View) {
-        val animator = ObjectAnimator.ofFloat(view, "translationX", 0f, 10f, -10f, 10f, -10f, 0f)
-        animator.duration = 600
-        animator.repeatCount = ObjectAnimator.INFINITE
-        animator.start()
+        shakeAnimator?.cancel() // Stop if already shaking
+
+        shakeAnimator = ObjectAnimator.ofFloat(view, "translationX", 0f, 10f, -10f, 10f, -10f, 0f).apply {
+            duration = 600
+            repeatCount = ObjectAnimator.INFINITE
+            start()
+        }
     }
 
+
     private fun setButtonDailyReward() {
-        // Check if daily reward is available
         val tinyDB = TinyDB(this)
         val user = tinyDB.getObject("User", UsersModel::class.java) ?: UsersModel()
         val today = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(Date())
 
         if (user.lastSpinDate != today) {
-            // Start shaking animation
             startShaking(binding.DailyReward)
         } else {
-            // Stop animation if already spun
-            binding.DailyReward.clearAnimation()
+            shakeAnimator?.cancel()
+            shakeAnimator = null
         }
     }
 

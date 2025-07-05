@@ -54,6 +54,7 @@ dependencies {
     implementation(libs.androidx.legacy.support.v4)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
+    implementation(libs.androidx.core.splashscreen)
     androidTestImplementation(libs.androidx.espresso.core)
     //Library for loading and caching images
     implementation (libs.glide)
